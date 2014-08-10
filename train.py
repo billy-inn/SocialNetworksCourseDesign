@@ -1,7 +1,7 @@
 from numpy import *
 import logRegres
 
-fr = open("out.txt","r")
+fr = open("./data/out.txt","r")
 Vec = {}
 
 for line in fr.readlines():
@@ -16,7 +16,8 @@ for line in fr.readlines():
 		Vec[coordinate] = [0,0,0,0,0]
 	Vec[coordinate][typeId] += 1
 
-fr = open("out.txt","r")
+fr.close()
+fr = open("./data/out.txt","r")
 
 actualMat = []
 isexist = set()
@@ -35,6 +36,8 @@ for line in fr.readlines():
 			actualMat.append(coordinate)
 			isexist.add(coordinate)
 
+fr.close()
+
 maxtype = [0, 0, 0, 0]
 
 for vec in Vec.items():
@@ -45,11 +48,16 @@ dataMat = []
 labelMat = []
 coordMat = []
 
+fr = open("./data/dataset.txt","w")
+
 for vec in Vec.items():
 	#dataMat.append([vec[1][0]/maxtype[0],vec[1][1]/maxtype[1],vec[1][2]/maxtype[2],vec[1][3]/maxtype[3]])
+	fr.write("%f,%f,%f,%f,%f,%d,%d\n" % (vec[1][0],vec[1][1],vec[1][2],vec[1][3],vec[1][4],vec[0][1],vec[0][1]))
 	dataMat.append([vec[1][0],vec[1][1],vec[1][2],vec[1][3]]);
 	labelMat.append(vec[1][4])
 	coordMat.append(vec[0])
+
+fr.close()
 
 weights = logRegres.gradAscent(dataMat,labelMat)
 predictMat = []
