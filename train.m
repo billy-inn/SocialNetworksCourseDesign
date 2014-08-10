@@ -14,7 +14,7 @@ X = mapFeature(X);
 
 initial_theta = zeros(size(X,2),1);
 
-lambda = 1;
+lambda = 10000;
 
 options = optimset('GradObj','on','MaxIter',400);
 
@@ -26,7 +26,7 @@ m = size(Z,1);
 fw = fopen('./data/predict.txt','wt+');
 
 for i = 1:m
-	if Z(i,1) > 0.5 
+	if Z(i,1) > 0.500001
 		fprintf(fw,'%d %d\n',coordinate(i,1),coordinate(i,2));
 	end
 end
