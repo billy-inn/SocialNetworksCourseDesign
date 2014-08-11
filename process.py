@@ -43,7 +43,7 @@ fw = open("./data/dataset.txt","w")
 
 for vec in Vec.items():
 	#dataMat.append([vec[1][0]/maxtype[0],vec[1][1]/maxtype[1],vec[1][2]/maxtype[2],vec[1][3]/maxtype[3]])
-	fw.write("%f,%f,%f,%f,%f,%d,%d\n" % (vec[1][0],vec[1][1],vec[1][2],vec[1][3],vec[1][4],vec[0][0],vec[0][1]))
+	fw.write("%f,%f,%f,%f,%d,%d,%d\n" % (vec[1][0],vec[1][1],vec[1][2],vec[1][3],vec[1][4],vec[0][0],vec[0][1]))
 	#dataMat.append([vec[1][0],vec[1][1],vec[1][2],vec[1][3]]);
 	#labelMat.append(vec[1][4])
 	#coordMat.append(vec[0])
