@@ -10,7 +10,7 @@ X = data(:,1:4);
 y = data(:,5);
 coordinate = data(:,6:7);
 
-X = mapFeature(X);
+X = mapFeature(X,4);
 
 initial_theta = zeros(size(X,2),1);
 

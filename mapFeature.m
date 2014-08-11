@@ -1,6 +1,5 @@
-function out = mapFeature(X)
+function out = mapFeature(X, degree)
 
-degree = 4;
 out = ones(size(X(:,1)));
 
 for i = 1:degree
