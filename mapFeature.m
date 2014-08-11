@@ -1,4 +1,5 @@
 function out = mapFeature(X, degree)
+% polynomial features mapping
 
 out = ones(size(X(:,1)));
 
