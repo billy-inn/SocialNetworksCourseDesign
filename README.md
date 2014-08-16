@@ -1,14 +1,22 @@
 # Usage
 
-./run.sh 
+./runLogRegres.sh 
 
-PS: you should install python and octave or matlab in advance.
+To use logistic regression to predict.
+
+./runSVM.sh
+
+To use support vector machines to predict.
+
+PS:
+You should install python and octave or matlab in advance.
+And I use the SVM package 'libsvm' to implement the SVM solution, so you should install the 'libsvm' on octave or matlab to ensure the program to run properly.
 
 # Function
 
-Given the input data file 'out.txt', split the data into training set and test set, use the logistic regression to predict the users' behavior.
+Given the input data file 'out.txt', split the data into training set and test set, use the logistic regression or SVM to predict the users' behavior.
 
-We store the actual buying behaviors in the 'actual.txt' and the predicted buying behaviors in the 'predict.txt'.
+We store the actual buying behaviors in the 'actual.txt' and the predicted buying behaviors in the 'predict.txt' or 'SVMpredict.txt'.
 
 Then we present the targets hit, the Precison, the Recall and eventually, the F1 value of our models.
 
